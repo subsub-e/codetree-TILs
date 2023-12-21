@@ -17,7 +17,7 @@ bool InRange(int x){
 int Maxarr(int x){
     int cnt = 0;
     int ans = arr[x];
-    for(int i = x - 3; i < x + 3; i++){
+    for(int i = x - b; i < x + b; i++){
         if(!InRange(i)){
             continue;
         }
