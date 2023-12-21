@@ -47,16 +47,18 @@ int main() {
     int cnt1 = 0;
     for(int i = 0; i < a; i++){
         if(v[i] == 1){
-            if(i == 0){
-                continue;
+            for(int j = i + 1; j < a; j++){
+                if(v[j] == 1){
+                    if(min > cnt1){
+                        min = cnt1;
+                    }
+                    cnt1 = 0;
+                    break;
+                }
+                else{
+                    cnt1++;
+                }
             }
-            if(min > cnt1){
-                min = cnt1;
-            }
-            cnt1 = 0;
-        }
-        else{
-            cnt1++;
         }
     }
     cout << min + 1;
