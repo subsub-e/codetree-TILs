@@ -10,13 +10,24 @@ int main() {
     for(int i = 0; i < a-1; i++){
         cin >> arr[i];
     }
-    int ans = arr[0] - 1;
-    v.push_back(ans);
-    for(int i = 0; i < a-1; i++){
-        int b = arr[i] - ans;
-        v.push_back(b);
-        ans = b;
+
+    for(int i = arr[i] - 1; i > 0; i--){
+        int ans = i;
+        v.push_back(ans);
+        for(int j = 0; j < a - 1; j++){
+            if(ans < 1){
+                v.clear();
+                break;
+            }
+            int b = arr[j] - ans;
+            v.push_back(b);
+            ans = b;
+        }
+        if(v.size() == a){
+            break;
+        }
     }
+
     for(int i = 0; i < v.size(); i++){
         cout << v[i] << ' ';
     }
