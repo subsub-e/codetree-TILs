@@ -12,7 +12,7 @@ int main() {
     }
     int ans = 1;
     int flag = 0;
-    while(1){
+    while(ans <= 10000){
         int d;
         d = ans;
         flag = 0;
