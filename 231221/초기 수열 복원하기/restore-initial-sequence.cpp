@@ -19,6 +19,16 @@ int main() {
                 v.clear();
                 break;
             }
+            int flag = 0;
+            for(int k = 0; k < v.size() - 1; k++){
+                if(ans == v[k]){
+                    flag = 1;
+                }
+            }
+            if(flag == 1){
+                v.clear();
+                break;
+            }
             int b = arr[j] - ans;
             v.push_back(b);
             ans = b;
