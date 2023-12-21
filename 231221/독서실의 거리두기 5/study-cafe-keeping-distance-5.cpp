@@ -1,66 +1,44 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <string>
+#include <algorithm>
+
 using namespace std;
 
+int n;
+string seat;
+
+int MinDist() {
+    int min_dist = n;
+    // 둘 다 1인 곳에 대해
+    // 모든 쌍을 조사하여, 그 중 가장 가까운 거리를 구합니다.
+    for(int i = 0; i < n; i++)
+        for(int j = i + 1; j < n; j++)
+            if(seat[i] == '1' && seat[j] == '1')
+                min_dist = min(min_dist, j - i);
+    
+    return min_dist;
+}
+
 int main() {
-    // 여기에 코드를 작성해주세요.
-    int a; cin >> a;
-    vector<int> v;
-    string str; cin >> str;
-    for(int i = 0; i < a; i++){
-        int b = str[i];
-        b = b - 48;
-        v.push_back(b);
-    }
-    int max1 = 0;
-    int cnt = 0;
-    int ans;
-    for(int i = 0; i < a; i++){
-        if(v[i] == 1){
-            cnt = 0;
-        }
-        else{
-            cnt++;
-            if(i == a-1){
-                if(max1 < cnt){
-                    max1 = cnt;
-                    ans = i;
-                }
-                break;
-            }
-            for(int j = 1; j < cnt; j++){
-                if(v[i + j] == 1){
-                    cnt = 0;
-                    break;
-                }
-            }
-            if(max1 < cnt){
-                max1 = cnt;
-                ans = i;
-            }
+    // 입력:
+    cin >> n;
+    cin >> seat;
+    
+    int ans = 0;
+    // 들어갈 위치를 일일이 정해보며
+    // 그 상황에서 가장 가까운 사람간의 거리를 구해
+    // 가능한 경우 중 최댓값을 계산합니다.
+    for(int i = 0; i < n; i++) {
+        if(seat[i] == '0') {
+            // 비어있는 위치에 인원을 배치합니다.
+            seat[i] = '1';
+            // 가장 가까운 사람간의 거리를 구해 최댓값을 갱신해줍니다.
+            ans = max(ans, MinDist());
+            // 다시 채워졌던 값을 되돌려줍니다.
+            seat[i] = '0';
         }
     }
-    int min = 10000;
-    v[ans] = 1;
-    int cnt1 = 0;
-    for(int i = 0; i < a; i++){
-        if(v[i] == 1){
-            for(int j = i + 1; j < a; j++){
-                if(v[j] == 1){
-                    if(min > cnt1){
-                        min = cnt1;
-                    }
-                    cnt1 = 0;
-                    break;
-                }
-                else{
-                    cnt1++;
-                }
-            }
-        }
-    }
-    cout << min + 1;
+
+    cout << ans;
     return 0;
 }
