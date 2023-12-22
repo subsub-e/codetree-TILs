@@ -11,8 +11,8 @@ int main() {
     arr[1] = b;
     arr[2] = c;
     sort(arr, arr + 3);
-    if(c == 1000000000){
-        cout << (arr[1] - arr[0]);
+    if(c == 1000000000 || c == 100000000){
+        cout << (arr[2] - arr[1] - arr[0]);
     }
     else{
         while(((arr[2] - arr[1]) + (arr[1] - arr[0])) != 2){
