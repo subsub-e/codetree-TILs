@@ -1,76 +1,44 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+
 using namespace std;
 
+int n;
+string seat;
+
+int MinDist() {
+    int min_dist = n;
+    // 둘 다 1인 곳에 대해
+    // 모든 쌍을 조사하여, 그 중 가장 가까운 거리를 구합니다.
+    for(int i = 0; i < n; i++)
+        for(int j = i + 1; j < n; j++)
+            if(seat[i] == '1' && seat[j] == '1')
+                min_dist = min(min_dist, j - i);
+    
+    return min_dist;
+}
+
 int main() {
-    // 여기에 코드를 작성해주세요.
-    int a; cin >> a;
-    string str;
-    cin >> str;
-    int arr[a];
-    for(int i = 0; i < a; i++){
-        arr[i] = str[i] - 48;
-    }
-    int max = 0;
-    int maxidx;
-    int cnt = 0;
-    int flag = 0;
-    int flag1 = 0;
-    for(int i = 0; i < a; i++){
-        if(i == a-1){
-            if(arr[i] == 0){
-                cnt *= 2;
-                if(max < cnt){
-                    cnt /= 2;
-                    cnt++;
-                    flag = 1;
-                    maxidx = i;
-                    max = cnt;
-                    break;
-                }
-            }
-        }
-        if(arr[i] == 1){
-            if(max < cnt){
-                maxidx = i;
-                max = cnt;
-            }
-            cnt = 0;
-        }
-        else{
-            if(i == 0){
-                flag1 = 1;
-            }
-            cnt++;
+    // 입력:
+    cin >> n;
+    cin >> seat;
+    
+    int ans = 0;
+    // 들어갈 위치를 일일이 정해보며
+    // 그 상황에서 가장 가까운 사람간의 거리를 구해
+    // 가능한 경우 중 최댓값을 계산합니다.
+    for(int i = 0; i < n; i++) {
+        if(seat[i] == '0') {
+            // 비어있는 위치에 인원을 배치합니다.
+            seat[i] = '1';
+            // 가장 가까운 사람간의 거리를 구해 최댓값을 갱신해줍니다.
+            ans = max(ans, MinDist());
+            // 다시 채워졌던 값을 되돌려줍니다.
+            seat[i] = '0';
         }
     }
-    if(flag == 1){
-        arr[a-1] = 1;
-    }
-    else if(flag1 == 1){
-        arr[0] = 1;
-    }
-    else{
-        arr[(maxidx+(maxidx - max - 1))/2] = 1;
-    }
-    // for(int i = 0; i < a; i++){
-    //     cout << arr[i] << ' ';
-    // }
-    // cout << '\n';
-    int minans = 1000000;
-    int cntans = 0;
-    for(int i = 0; i < a; i++){
-        if(i != 0 && arr[i] == 1){
-            if(minans > cntans){
-                minans = cntans;
-            }
-            cntans = 0;
-        }
-        else{
-            cntans++;
-        }
-    }
-    cout << minans + 1;
+
+    cout << ans;
     return 0;
 }
