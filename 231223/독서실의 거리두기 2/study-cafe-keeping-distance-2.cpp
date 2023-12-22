@@ -16,7 +16,8 @@ int main() {
     int maxidx;
     int cnt = 0;
     int flag = 0;
-    for(int i = 1; i < a; i++){
+    int flag1 = 0;
+    for(int i = 0; i < a; i++){
         if(i == a-1){
             if(arr[i] == 0){
                 cnt *= 2;
@@ -38,11 +39,17 @@ int main() {
             cnt = 0;
         }
         else{
+            if(i == 0){
+                flag1 = 1;
+            }
             cnt++;
         }
     }
     if(flag == 1){
         arr[a-1] = 1;
+    }
+    else if(flag1 == 1){
+        arr[0] = 1;
     }
     else{
         arr[(maxidx+(maxidx - max - 1))/2] = 1;
@@ -53,8 +60,8 @@ int main() {
     // cout << '\n';
     int minans = 1000000;
     int cntans = 0;
-    for(int i = 1; i < a; i++){
-        if(arr[i] == 1){
+    for(int i = 0; i < a; i++){
+        if(i != 0 && arr[i] == 1){
             if(minans > cntans){
                 minans = cntans;
             }
