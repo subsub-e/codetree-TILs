@@ -12,7 +12,7 @@ int main() {
     arr[2] = c;
     sort(arr, arr + 3);
     if(c == 1000000000){
-        cout << arr[1] - arr[0];
+        cout << (arr[1] - arr[0]);
     }
     else{
         while(((arr[2] - arr[1]) + (arr[1] - arr[0])) != 2){
