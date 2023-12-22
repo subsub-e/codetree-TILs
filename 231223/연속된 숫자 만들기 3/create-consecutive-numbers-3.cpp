@@ -11,21 +11,16 @@ int main() {
     arr[1] = b;
     arr[2] = c;
     sort(arr, arr + 3);
-    while(1){
-        if(arr[0] + 1 == arr[1] && arr[1] + 1 == arr[2]){
-            break;
+    while(((arr[2] - arr[1]) + (arr[1] - arr[0])) != 2){
+        if(arr[2] - arr[1] > arr[1] - arr[0]){
+            arr[0] = arr[1] + 1;
+            sort(arr, arr + 3);
+            cnt++;
         }
         else{
-            if(arr[2] - arr[1] > arr[1] - arr[0]){
-                arr[0] = arr[1] + 1;
-                sort(arr, arr + 3);
-                cnt++;
-            }
-            else{
-                arr[2] = arr[1] - 1;
-                sort(arr, arr + 3);
-                cnt++;
-            }
+            arr[2] = arr[1] - 1;
+            sort(arr, arr + 3);
+            cnt++;
         }
     }
     cout << cnt;
