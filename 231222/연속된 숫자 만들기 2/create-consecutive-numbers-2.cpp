@@ -16,7 +16,7 @@ int main() {
         if((arr[1] - arr[0] == 1) && (arr[2] - arr[1] == 1)){
             break;
         }
-        else if((arr[1] - arr[0] == 2) && (arr[2] - arr[1] == 2)){
+        else if((arr[1] - arr[0] == 2) || (arr[2] - arr[1] == 2)){
             cnt = 1;
             break;
         }
