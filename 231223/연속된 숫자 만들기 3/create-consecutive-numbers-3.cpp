@@ -11,18 +11,24 @@ int main() {
     arr[1] = b;
     arr[2] = c;
     sort(arr, arr + 3);
-    while(((arr[2] - arr[1]) + (arr[1] - arr[0])) != 2){
-        if(arr[2] - arr[1] > arr[1] - arr[0]){
-            arr[0] = arr[1] + 1;
-            sort(arr, arr + 3);
-            cnt++;
-        }
-        else{
-            arr[2] = arr[1] - 1;
-            sort(arr, arr + 3);
-            cnt++;
-        }
+    if(c == 1,000,000,000){
+        cout << arr[1] - arr[0];
     }
-    cout << cnt;
+    else{
+        while(((arr[2] - arr[1]) + (arr[1] - arr[0])) != 2){
+            if(arr[2] - arr[1] > arr[1] - arr[0]){
+                arr[0] = arr[1] + 1;
+                sort(arr, arr + 3);
+                cnt++;
+            }
+            else{
+                arr[2] = arr[1] - 1;
+                sort(arr, arr + 3);
+                cnt++;
+            }
+        }
+        cout << cnt;
+    }
+    
     return 0;
 }
