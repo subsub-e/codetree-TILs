@@ -16,9 +16,15 @@ int main() {
         if((arr[1] - arr[0] == 1) && (arr[2] - arr[1] == 1)){
             break;
         }
-        if((arr[1] - arr[0] == 1) || (arr[2] - arr[1] == 1)){
+        else if((arr[1] - arr[0]) == 1){
+            arr[0] = (arr[1] + arr[2]) / 2;
             cnt++;
-            break;
+            sort(arr, arr + 2);
+        }
+        else if((arr[2] - arr[1]) == 1){
+            arr[2] = (arr[0] + arr[1]) / 2;
+            cnt++;
+            sort(arr, arr + 2);
         }
         else{
             if((arr[1] - arr[0]) > (arr[2] - arr[1])){
