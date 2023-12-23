@@ -15,18 +15,11 @@ int main() {
     int avg = sum / a;
 
     int block = 0;
-    if(a % 2 == 0){
-        for(int i = a-1; i >= a/2; i--){
+    for(int i = 0; i < a; i++){
+        if(arr[i] > avg){
             block += arr[i] - avg;
         }
-        cout << block;
-        return 0;
     }
-    else{
-        for(int i = a-1; i >= a/2; i--){
-            block += arr[i] - avg;
-        }
-        cout << block;
-    }
+    cout << block;
     return 0;
 }
