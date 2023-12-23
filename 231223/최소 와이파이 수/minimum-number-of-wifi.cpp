@@ -48,8 +48,11 @@ int main() {
                 i++;
             }
         }
-        if(arr[idx + b + 1] == 1){
-            cnt++;
+        for(int i = (idx + b + 1); i < a; i++){
+            if(arr[i] == 1){
+                cnt++;
+                break;
+            }
         }
         cout << cnt;
     }
