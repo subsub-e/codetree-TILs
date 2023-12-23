@@ -18,7 +18,7 @@ int main() {
         }
     }
     if(a == 2){
-        cout << min((v1[1] - v1[0]),(v2[1] - v2[0]));
+        cout << min((v2[0] - v1[0]),(v2[1] - v1[1]));
         return 0;
     }
     sort(v1.begin(), v1.end());
