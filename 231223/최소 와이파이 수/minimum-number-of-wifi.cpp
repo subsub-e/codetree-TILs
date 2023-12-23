@@ -36,11 +36,16 @@ int main() {
         }
     }
     else{
-        for(int i = b; i < a; i++){
+        int i = b;
+        while(i < a){
+            //cout << i << '\n';
             if(arr[i - b] == 1){
                 cnt++;
                 idx = i;
                 i += (b * 2 + 1);
+            }
+            else{
+                i++;
             }
         }
         if(arr[idx + b + 1] == 1){
