@@ -19,6 +19,10 @@ int main() {
         cout << cnt;
         return 0;
     }
+    else if(b * 2 >= a){
+        cout << 1;
+        return 0;
+    }
     else{
         for(int i = b; i < a; i++){
             if(arr[i - b] == 1){
