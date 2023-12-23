@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
 int main() {
@@ -27,30 +28,35 @@ int main() {
     sort(plus.begin(), plus.end());
     sort(minus.begin(), minus.end());
     
-    int maxans = 0;
+    int maxans = INT_MIN;
     int ans = 1;
-    if(cnt1 == 1 || cnt1 >= 3){
+    if(cnt1 == 1){
+        ans = plus[0] * minus[0] * minus[1];
+        cout << ans;
+        return 0;
+    }
+    else if(cnt1 == 2){
+        ans = 1;
+        ans = minus[cnt2 - 1] * minus[cnt2 - 2] * plus[1];
+        cout << ans;
+        return 0;
+    }
+    else if(cnt1 >= 3){
+        ans = 1;
         ans = plus[cnt1 - 1] * plus[cnt1 - 2] * plus[cnt1 - 3];
         maxans = max(ans, maxans);
         ans = 1;
         ans = plus[cnt1 - 1] * minus[0] * minus[1];
         maxans = max(ans, maxans);
         cout << maxans;
-        ans = 1;
         return 0;
     }
     else{
-        if(zero.size() > 0){
+        if(zero.size() != 0){
             cout << 0;
             return 0;
         }
         else{
-            if(cnt1 == 2){
-                ans = 1;
-                ans = minus[cnt2 - 1] * plus[0] * plus[1];
-                maxans = max(ans, maxans);
-                cout << maxans;
-            }
             ans = 1;
             ans = minus[cnt2 - 1] * minus[cnt2 - 2] * minus[cnt2 - 3];
             maxans = max(ans, maxans);
