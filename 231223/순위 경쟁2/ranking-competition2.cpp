@@ -11,12 +11,12 @@ int main() {
         char c;
         int d; cin >> c >> d;
         if(c == 'A'){
-            arr[i][0] = d;
+            arr[i][0] = arr[i-1][0] + d;
             arr[i][1] = 0;
         }
         else{
             arr[i][0] = 0;
-            arr[i][1] = d;
+            arr[i][1] = arr[i-1][1] + d;
         }
     }
     int cnt = 0;
@@ -25,12 +25,15 @@ int main() {
         int prev = arr[i-1][1] - arr[i-1][0];
         if((prev == 0 || prev < 0) && now > 0){
             cnt++;
+            //cout << i << '\n';
         }
-        else if((prev == 0 || prev > 0) && now < 0){
+        if((prev == 0 || prev > 0) && now < 0){
             cnt++;
+            //cout << i << '\n';
         }
-        else if(now == 0 && (prev != 0)){
+        if(prev != 0 && now == 0){
             cnt++;
+            //cout << i << '\n';
         }
     }
     cout << cnt;
