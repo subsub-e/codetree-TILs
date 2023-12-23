@@ -12,19 +12,7 @@ int main() {
     int a = arr[0];
     int b = arr[1];
     int c = arr[2];
-    int idx;
-    if(a + b > arr[3]){
-        idx = 3;
-    }
-    else if(a + c > arr[4]){
-        idx = 4;
-    }
-    else if(b + c > arr[5]){
-        idx = 5;
-    }
-    else if(a + b + c > arr[6]){
-        idx = 6;
-    }
-    cout << a << ' ' << b << ' ' << c << ' ' << arr[idx];
+    int d = arr[14] - a - b - c;
+    cout << a << ' ' << b << ' ' << c << ' ' << d;
     return 0;
 }
