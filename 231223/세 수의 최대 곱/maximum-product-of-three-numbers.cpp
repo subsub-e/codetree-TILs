@@ -50,7 +50,6 @@ int main() {
                 ans = minus[cnt2 - 1] * plus[0] * plus[1];
                 maxans = max(ans, maxans);
                 cout << maxans;
-                return 0;
             }
             ans = 1;
             ans = minus[cnt2 - 1] * minus[cnt2 - 2] * minus[cnt2 - 3];
