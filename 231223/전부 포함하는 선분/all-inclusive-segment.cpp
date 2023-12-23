@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <climits>
 using namespace std;
 
 int main() {
@@ -17,14 +18,19 @@ int main() {
             v2.push_back(b);
         }
     }
-    if(a == 2){
-        cout << min((v2[0] - v1[0]),(v2[1] - v1[1]));
-        return 0;
+    int min_ans = INT_MAX;
+    for(int i = 0; i < a; i++){
+        int min_x = INT_MAX;
+        int max_y = 0;
+        for(int j = 0; j < a; j++){
+            if(i == j){
+                continue;
+            }
+            min_x = min(min_x, v1[j]);
+            max_y = max(max_y, v2[j]);
+        }
+        min_ans = min(min_ans, (max_y - min_x));
     }
-    sort(v1.begin(), v1.end());
-    sort(v2.begin(), v2.end());
-    int length1 = v2[a-1] - v1[1];
-    int length2 = v2[a-2] - v1[0];
-    cout << min(length1, length2);
+    cout << min_ans;
     return 0;
 }
