@@ -10,16 +10,28 @@ int main() {
     }
     int cnt = 0;
     int idx;
-    for(int i = b; i < a; i++){
-        if(arr[i - b] == 1){
-            cnt++;
-            idx = i;
-            i += (b * 2 + 1);
+    if(b == 0){
+        for(int i = 0; i < a; i++){
+            if(arr[i] == 1){
+                cnt++;
+            }
         }
+        cout << cnt;
+        return 0;
     }
-    if(arr[idx + b + 1] == 1){
-        cnt++;
+    else{
+        for(int i = b; i < a; i++){
+            if(arr[i - b] == 1){
+                cnt++;
+                idx = i;
+                i += (b * 2 + 1);
+            }
+        }
+        if(arr[idx + b + 1] == 1){
+            cnt++;
+        }
+        cout << cnt;
     }
-    cout << cnt;
+    
     return 0;
 }
