@@ -29,6 +29,9 @@ int main() {
         else if((prev == 0 || prev > 0) && now < 0){
             cnt++;
         }
+        else if(now == 0 && (prev != 0)){
+            cnt++;
+        }
     }
     cout << cnt;
     return 0;
