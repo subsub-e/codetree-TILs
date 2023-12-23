@@ -35,6 +35,9 @@ int main() {
             cnt++;
             //cout << i << '\n';
         }
+        if(prev == 0 && now != 0){
+            cnt++;
+        }
     }
     cout << cnt;
     return 0;
