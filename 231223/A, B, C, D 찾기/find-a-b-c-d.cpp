@@ -13,16 +13,16 @@ int main() {
     int b = arr[1];
     int c = arr[2];
     int idx;
-    if(a + b != arr[3]){
+    if(a + b > arr[3]){
         idx = 3;
     }
-    else if(a + c != arr[4]){
+    else if(a + c > arr[4]){
         idx = 4;
     }
-    else if(b + c != arr[5]){
+    else if(b + c > arr[5]){
         idx = 5;
     }
-    if(a + b + c != arr[6]){
+    else if(a + b + c > arr[6]){
         idx = 6;
     }
     cout << a << ' ' << b << ' ' << c << ' ' << arr[idx];
