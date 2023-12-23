@@ -7,61 +7,17 @@ using namespace std;
 int main() {
     // 여기에 코드를 작성해주세요.
     int a; cin >> a;
-    vector<int> plus;
-    vector<int> minus;
-    vector<int> zero;
-    int cnt1 = 0, cnt2 = 0;
+    vector<int> v;
     for(int i = 0; i < a; i++){
         int b; cin >> b;
-        if(b > 0){
-            cnt1++;
-            plus.push_back(b);
-        }
-        else if(b < 0){
-            cnt2++;
-            minus.push_back(b);
-        }
-        else{
-            zero.push_back(b);
-        }
+        v.push_back(b);
     }
-    sort(plus.begin(), plus.end());
-    sort(minus.begin(), minus.end());
-    
+    sort(v.begin(), v.end());
     int maxans = INT_MIN;
-    int ans = 1;
-    if(cnt1 == 1){
-        ans = plus[0] * minus[0] * minus[1];
-        cout << ans;
-        return 0;
-    }
-    else if(cnt1 == 2){
-        ans = 1;
-        ans = minus[cnt2 - 1] * minus[cnt2 - 2] * plus[1];
-        cout << ans;
-        return 0;
-    }
-    else if(cnt1 >= 3){
-        ans = 1;
-        ans = plus[cnt1 - 1] * plus[cnt1 - 2] * plus[cnt1 - 3];
-        maxans = max(ans, maxans);
-        ans = 1;
-        ans = plus[cnt1 - 1] * minus[0] * minus[1];
-        maxans = max(ans, maxans);
-        cout << maxans;
-        return 0;
-    }
-    else{
-        if(zero.size() != 0){
-            cout << 0;
-            return 0;
-        }
-        else{
-            ans = 1;
-            ans = minus[cnt2 - 1] * minus[cnt2 - 2] * minus[cnt2 - 3];
-            maxans = max(ans, maxans);
-            cout << maxans;
-        }
-    }
+    int cnt1 = v[v.size() - 1] * v[v.size() - 2] * v[v.size() - 3];
+    maxans = max(maxans, cnt1);
+    int cnt2 = v[v.size() - 1] * v[0] * v[1];
+    maxans = max(maxans, cnt2);
+    cout << maxans;
     return 0;
 }
