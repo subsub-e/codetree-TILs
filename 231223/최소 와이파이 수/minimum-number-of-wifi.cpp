@@ -20,8 +20,20 @@ int main() {
         return 0;
     }
     else if(b * 2 >= a){
-        cout << 1;
-        return 0;
+        int flag = 0;
+        for(int i = 0; i < a; i++){
+            if(arr[i] == 1){
+                flag = 1;
+            }
+        }
+        if(flag == 0){
+            cout << 0;
+            return 0;
+        }
+        else{
+            cout << 1;
+            return 0;
+        }
     }
     else{
         for(int i = b; i < a; i++){
