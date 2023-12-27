@@ -9,7 +9,7 @@ int main() {
     for(int i = 0; i < a; i++){
         cin >> arr[i];
     }
-    sort(arr, arr + i);
+    sort(arr, arr + a);
     for(int i = 0; i < a; i++){
         cout << arr[i] << ' ';
     }
