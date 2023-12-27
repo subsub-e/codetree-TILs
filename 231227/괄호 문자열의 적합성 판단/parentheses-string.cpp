@@ -13,9 +13,7 @@ int main() {
             s.push(str[i]);
         }
         else{
-            if(s.top() == '('){
-                s.pop();
-            }
+            s.pop();
         }
     }
     if(s.size() == 0){
