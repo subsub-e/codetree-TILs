@@ -29,6 +29,9 @@ int main() {
             cout << s.top() << '\n';
             s.pop();
         }
+        else if(str == "top"){
+            cout << s.top() << '\n';
+        }
     }
     return 0;
 }
