@@ -10,9 +10,13 @@ int main() {
     stack<int> s;
     for(int i = 0; i < str.length(); i++){
         if(str[i] == '('){
-            s.push(str[i]);
+            s.push('(');
         }
         else{
+            if(s.size() == 0){
+                cout << "No";
+                return 0;
+            }
             s.pop();
         }
     }
