@@ -30,7 +30,7 @@ int MaxNum4(int x, int y){
     if(x + 1 > a || y - 1 < 0){
         return 0;
     }
-    return arr[x][y] + arr[x + 1][y] + arr[x][y - 1];
+    return arr[x][y] + arr[x + 1][y] + arr[x + 1][y - 1];
 }
 
 int MaxNum5(int x, int y){
