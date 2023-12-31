@@ -20,13 +20,11 @@ int Gold(int x, int y, int size){
         int curr_x = x - i, curr_y = y;
 
         for(int j = 0; j <4; j++){
-            for(int l = 0; l < i; l++){
-                if(InRange(curr_x, curr_y)){
-                    gold += arr[curr_x][curr_y];
-                }
-                curr_x = curr_x + dx[j];
-                curr_y = curr_y + dy[j];
+            if(InRange(curr_x, curr_y)){
+                gold += arr[curr_x][curr_y];
             }
+            curr_x = curr_x + dx[j];
+            curr_y = curr_y + dy[j];
         }
     }
     return gold;
