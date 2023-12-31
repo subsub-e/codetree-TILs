@@ -7,14 +7,19 @@ int arr[100][100];
 
 bool Col(int x){
     vector<int> v1;
-    for(int i = 0; i < a-b+1; i++){
+    for(int i = 0; i < a - b + 1; i++){
         for(int j = i; j < b + i; j++){
             v1.push_back(arr[x][j]);
         }
-        for(int i = 0; i < b; i++){
-            if(v1[i] == v1[i + 1]){
-                return true;
+        int Colcnt = 0;
+        for(int j = 0; j < b; j++){
+            if(v1[j] == v1[j + 1]){
+                Colcnt++;
             }
+        }
+        if(Colcnt == b - 1){
+            v1.clear();
+            return true;
         }
         v1.clear();
     }
@@ -27,10 +32,15 @@ bool Row(int x){
         for(int j = i; j < b + i; j++){
             v1.push_back(arr[j][x]);
         }
-        for(int i = 0; i < b; i++){
-            if(v1[i] == v1[i + 1]){
-                return true;
+        int Rowcnt = 0;
+        for(int j = 0; j < b; j++){
+            if(v1[j] == v1[j + 1]){
+                Rowcnt++;
             }
+        }
+        if(Rowcnt == b - 1){
+            v1.clear();
+            return true;
         }
         v1.clear();
     }
