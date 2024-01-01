@@ -8,10 +8,18 @@ void cutArr(int x, int y){
     int num = arr[x][y];
     arr[x][y] = 0;
     for(int i = 1; i < num; i++){
-        arr[x - i][y] = 0;
-        arr[x + i][y] = 0;
-        arr[x][y - i] = 0;
-        arr[x][y + i] = 0;
+        if(x - i >= 0){
+            arr[x - i][y] = 0;
+        }
+        if(x + i < a){
+            arr[x + i][y] = 0;
+        }
+        if(y - i >= 0){
+            arr[x][y - i] = 0;
+        }
+        if(y + i < a){
+            arr[x][y + i] = 0;
+        }
     }
     int temp[a][a] = {};
     for(int i = 0; i < a; i++){
