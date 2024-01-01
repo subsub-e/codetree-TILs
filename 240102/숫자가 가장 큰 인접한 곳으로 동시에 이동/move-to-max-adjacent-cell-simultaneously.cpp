@@ -10,7 +10,7 @@ bool InRange(int x, int y){
 }
 
 void simulate(){
-    int dx[4] = {1, -1, 0, 0};
+    int dx[4] = {-1, 1, 0, 0};
     int dy[4] = {0, 0, -1, 1};
     int NewCount[n][n] = {};
     for(int i = 0; i < n; i++){
