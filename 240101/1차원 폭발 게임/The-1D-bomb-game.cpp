@@ -25,6 +25,10 @@ void Bomb(){
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> a >> b;
+    if(b == 1){
+        cout << 0;
+        return 0;
+    }
     for(int i = 0; i < a; i++){
         cin >> arr[i];
     }
