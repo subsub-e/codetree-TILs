@@ -1,15 +1,17 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int n, m, x, y;
 int arr[100][100];
 
 bool InRange(int a, int b){
-    return 0 <= a && a <= n && 0 <= b && b <= n;
+    return 0 <= a && a < n && 0 <= b && b < n;
 }
 
 void simulate(int t){
     int temp[n][n];
+    int dis = pow(2, t-1);
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             temp[i][j] = arr[i][j];
@@ -18,17 +20,17 @@ void simulate(int t){
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             if(temp[i][j] == 1){
-                if(InRange(i - t, j)){
-                    arr[i - t][j] = 1;
+                if(InRange(i - dis, j)){
+                    arr[i - dis][j] = 1;
                 }
-                if(InRange(i, j - t)){
-                    arr[i][j - t] = 1;
+                if(InRange(i, j - dis)){
+                    arr[i][j - dis] = 1;
                 }
-                if(InRange(i + t, j)){
-                    arr[i + t][j] = 1;
+                if(InRange(i + dis, j)){
+                    arr[i + dis][j] = 1;
                 }
-                if(InRange(i, j + t)){
-                    arr[i][j + t] = 1;
+                if(InRange(i, j + dis)){
+                    arr[i][j + dis] = 1;
                 }
             }
         }
@@ -48,6 +50,12 @@ int main() {
     arr[x][y] = 1;
     for(int i = 1; i <= m; i++){
         simulate(i);
+        // for(int i = 0; i < n; i++){
+        //     for(int j = 0; j < n; j++){
+        //         cout << arr[i][j] << ' ';
+        //     }
+        //     cout << '\n';
+        // }
     }
     int cnt = 0;
     for(int i = 0; i < n; i++){
