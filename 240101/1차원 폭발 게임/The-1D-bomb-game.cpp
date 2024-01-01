@@ -4,11 +4,8 @@ using namespace std;
 int a, b; 
 int arr[100];
 
-void Bomb(int x, int y){
+void Bomb(){
     int temp[a] = {};
-    for(int i = x; i < x + y; i++){
-        arr[i] = 0;
-    }
     // for(int i = 0; i < a; i++){
     //     cout << arr[i] << ' ';
     // }
@@ -55,13 +52,22 @@ int main() {
             }
             else{
                 if(cnt1 >= b){
-                    Bomb(index, cnt1);
+                    for(int k = index; k < cnt1 + index; k++){
+                        arr[k] = 0;
+                    }
                     flag = 1;
                 }
-                index++;
+                index = i;
                 cnt1 = 1;
             }
         }
+        if(cnt1 >= b){
+            for(int k = index; k < cnt1 + index; k++){
+                arr[k] = 0;
+            }
+            flag = 1;
+        }
+        Bomb();
     }
     int cnt = 0;
     for(int i = 0; i < a; i++){
