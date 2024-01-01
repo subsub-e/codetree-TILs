@@ -8,12 +8,14 @@ int arr[100][100];
 int find(){
     int index = 0;
     for(int i = 0; i < a; i++){
-        for(int j = c; j < b; j++){
+        for(int j = c; j < b + c; j++){
             if(arr[i][j] == 1){
                 return index;
             }
+            else{
+                index = i;
+            }
         }
-        index = i;
     }
     return index;
 }
@@ -28,7 +30,7 @@ int main() {
     }
     c--;
     int index_i = find();
-    for(int i = 0; i < b; i++){
+    for(int i = c; i < c+b; i++){
         arr[index_i][i] = 1;
     }
     for(int i = 0; i < a; i++){
