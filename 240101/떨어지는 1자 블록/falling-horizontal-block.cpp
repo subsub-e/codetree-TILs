@@ -12,10 +12,8 @@ int find(){
             if(arr[i][j] == 1){
                 return index;
             }
-            else{
-                index = i;
-            }
         }
+        index = i;
     }
     return index;
 }
