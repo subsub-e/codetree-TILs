@@ -32,16 +32,16 @@ int main() {
     for(int i = 0; i < a; i++){
         cin >> arr[i];
     }
-    int endp = 0;
-    for(int i = 1; i < a; i++){
-        if(arr[i-1] != arr[i]){
-            endp = 1;
-        }
-    }
-    if(endp == 0){
-        cout << 0;
-        return 0;
-    }
+    // int endp = 0;
+    // for(int i = 1; i < a; i++){
+    //     if(arr[i-1] != arr[i]){
+    //         endp = 1;
+    //     }
+    // }
+    // if(endp == 0){
+    //     cout << 0;
+    //     return 0;
+    // }
     int flag = 1;
     while(1){
         if(flag == 0){
