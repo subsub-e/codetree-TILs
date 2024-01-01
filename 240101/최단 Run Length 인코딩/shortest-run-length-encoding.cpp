@@ -20,6 +20,11 @@ int main() {
     cin >> str;
     int minans = 11;
     int flag = 1;
+
+    if(str.length() == 1){
+        cout << 2;
+        return 0;
+    }
     if(str.length() == 10){
         for(int i = 1; i < str.length(); i++){
             if(str[i] != str[i-1]){
