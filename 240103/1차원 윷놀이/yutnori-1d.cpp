@@ -15,7 +15,7 @@ int total(){
         count[v[i]] += arr[i];
     }
     for(int i = 1; i < k + 1; i++){
-        if(count[i] >= m){
+        if(count[i] >= m-1){
             cnt++;
         }
     }
