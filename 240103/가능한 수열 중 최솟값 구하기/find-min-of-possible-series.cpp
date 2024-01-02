@@ -28,18 +28,15 @@ string getSequenceString() {
 void simulate(int len, int start) {
     if (len == a) {
         if (possible()) {
-            string sequence = getSequenceString();
-            if (visited.find(sequence) == visited.end()) {
-                visited.insert(sequence);
-                for (int i = 0; i < a; i++) {
-                    cout << v[i];
-                }
-                cout << '\n';
-                exit(0);  // 프로그램 종료 추가
+            for (int i = 0; i < a; i++) {
+                cout << v[i];
             }
+            cout << '\n';
+            exit(0);  // 프로그램 종료 추가
+            
         }
         return;
-    }
+    }   
 
     for (int i = start; i <= 6; i++) {
         v.push_back(i);
