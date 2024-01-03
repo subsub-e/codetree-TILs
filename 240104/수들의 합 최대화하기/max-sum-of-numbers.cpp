@@ -13,10 +13,10 @@ vector<int> v;
 void simulate(int count){
     if(count == a){
         int v_max = 0;
-        for(int i = 0; i < a; i++){
-            cout << v[i] << ' ';
-        }
-        cout << '\n';
+        // for(int i = 0; i < a; i++){
+        //     cout << v[i] << ' ';
+        // }
+        // cout << '\n';
         for(int i = 0; i < a; i++){
             v_max += v[i];
         }
