@@ -18,10 +18,14 @@ int calc(){
     // for(int i = 0; i < m; i++){
     //     cout << v[i].first << ' ' << v[i].second << '\n';
     // }
-    for(int i = 1; i < m; i++){
-        int calc_num = (v[i].first - v[i-1].first) * (v[i].first - v[i-1].first) + (v[i].second - v[i-1].second) * (v[i].second - v[i-1].second);
-        maxans = max(maxans, calc_num);
+    // cout << '\n';
+    for(int i = 0; i < m; i++){
+        for(int j = i + 1; j < m; j++){
+            int calc_num = (v[j].first - v[i].first) * (v[j].first - v[i].first) + (v[j].second - v[i].second) * (v[j].second - v[i].second);
+            maxans = max(maxans, calc_num);
+        }
     }
+    //cout << maxans << '\n';
     return maxans;
 }
 
