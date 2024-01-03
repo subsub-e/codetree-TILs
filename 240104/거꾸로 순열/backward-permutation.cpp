@@ -3,7 +3,7 @@
 using namespace std;
 
 int a;
-bool visited[8];
+bool visited[9];
 vector<int> v;
 
 void simulate(int count){
