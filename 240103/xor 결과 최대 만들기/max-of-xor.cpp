@@ -1,7 +1,8 @@
-#include <stdio.h>
+#include <iostream>
 #include <vector>
 #include <climits>
 using namespace std;
+
 int n,m;
 int ans=INT_MIN;
 int num[20];
@@ -15,22 +16,34 @@ int max(int a,int b){
 
 
 void choose(int cnt, int st_idx) {
-  if(cnt==m) {
-    int x=number[0];
-    for(int i=1;i<number.size();i++) x^=number[i];
-    ans=max(ans,x);
-    return;
-  }
-  for(int i=st_idx;i<n;i++) {
-    number.push_back(num[i]);
-    choose(cnt+1,st_idx+1);
-    number.pop_back();
-  }
+    if(cnt==m) {
+        int x=number[0];
+        for(int i=1;i<number.size();i++){
+            //cout << x << ' ';
+            x^=number[i];
+        } 
+        //cout << '\n';
+        ans=max(ans,x);
+        return;
+    }
+    
+    for(int i=st_idx;i<n;i++) {
+        number.push_back(num[i]);
+        // for(int i = 0; i < number.size(); i++){
+        //     cout << number[i] << ' ';
+        // }
+        // cout << '\n';
+        choose(cnt+1,i + 1);
+        number.pop_back();
+    }
 }
+
 int main() {
-  scanf("%d %d",&n,&m);
-  for(int i=0;i<n;i++) scanf("%d",&num[i]);
+  cin >> n >> m;
+  for(int i= 0; i < n; i++){
+    cin >> num[i];
+  }
   choose(0, 0);
-  printf("%d",ans);
+  cout << ans;
   return 0;
 }
