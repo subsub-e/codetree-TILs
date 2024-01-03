@@ -50,6 +50,10 @@ int main() {
     for(int i = 0; i < a * 2; i++){
         cin >> arr[i];
     }
+    if(a == 1){
+      cout << arr[1] - arr[0];
+      return 0;
+    }
     simulate(1, 1);
     cout << ans;
     return 0;
