@@ -21,7 +21,7 @@ void choose(int cnt, int st_idx) {
     ans=max(ans,x);
     return;
   }
-  for(int i=st_idx;i<=n;i++) {
+  for(int i=st_idx;i<n;i++) {
     number.push_back(num[i]);
     choose(cnt+1,st_idx+1);
     number.pop_back();
