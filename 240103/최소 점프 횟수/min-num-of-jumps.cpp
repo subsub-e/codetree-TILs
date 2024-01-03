@@ -9,7 +9,7 @@ int arr[10];
 int ans = INT_MAX;
 
 void simulate(int x, int count){
-    if(arr[x] == 0){
+    if(x != n -1 && arr[x] == 0){
         return;
     }
     if(x == n-1){
