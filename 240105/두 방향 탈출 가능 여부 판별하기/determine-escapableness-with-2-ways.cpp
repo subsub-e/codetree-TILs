@@ -20,7 +20,7 @@ bool cango(int x, int y){
 }
 
 void dfs(int x, int y){
-    cout << x << ' ' << y << '\n';
+    //cout << x << ' ' << y << '\n';
     if(x == n - 1 && y == m - 1){
         cout << 1;
         exit(0);
