@@ -19,9 +19,11 @@ bool cango(int x, int y){
     return true;
 }
 
-bool dfs(int x, int y){
-    if(x == n-1 && y == m-1){
-        return true;
+void dfs(int x, int y){
+    //cout << x << ' ' << y << '\n';
+    if(x == n - 1 && y == n - 1){
+        cout << 1;
+        exit(0);
     }
 
     int dx[2] = {1, 0};
@@ -35,7 +37,6 @@ bool dfs(int x, int y){
             dfs(new_x, new_y);
         }
     }
-    return false;
 }
 
 int main() {
@@ -46,10 +47,8 @@ int main() {
             cin >> arr[i][j];
         }
     }
-    if(dfs(0,0)){
-        cout << 1;
-        return 0;
-    }
+
+    dfs(0,0);
     cout << 0;
     return 0;
 }
