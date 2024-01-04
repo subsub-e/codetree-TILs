@@ -16,8 +16,12 @@ int calc(){
     // for(int i = 0; i < v.size(); i++){
     //     cout << v[i] << ' ';
     // }
-    // cout << '\n';
+    
     for(int i = 1; i < v.size(); i++){
+        if(arr[v[i - 1]][v[i]] == 0){
+            v.pop_back();
+            return INT_MAX;
+        }
         cost += arr[v[i - 1]][v[i]];
     }
     v.pop_back();
