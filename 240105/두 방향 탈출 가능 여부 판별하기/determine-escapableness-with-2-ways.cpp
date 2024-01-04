@@ -31,7 +31,7 @@ bool dfs(int x, int y){
         int new_x = x + dx[i];
         int new_y = y + dy[i];
         if(cango(new_x, new_y)){
-            visited[new_x, new_y];
+            visited[new_x][new_y] = 1;
             dfs(new_x, new_y);
         }
     }
