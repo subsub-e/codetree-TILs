@@ -3,6 +3,7 @@
 #include <tuple>
 #include <queue>
 #include <climits>
+#include <cstring>
 using namespace std;
 
 int n, h, m;
@@ -69,12 +70,8 @@ int main() {
                 push(i, j, 0);
                 answer[i][j] = bps();
                 minans = INT_MAX;
-                for(int l = 0; l < n; l++){
-                    for(int k = 0; k < n; k++){
-                        step[l][k] = 0;
-                        visited[l][k] = 0;
-                    }
-                }
+                memset(step, 0, sizeof(step));
+                memset(visited, 0, sizeof(visited));
             }
         }
     }
