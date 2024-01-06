@@ -42,6 +42,10 @@ int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n;
     int max_n = 0;
+    if(n == 1){
+        cout << 0 << ' ' << 1;
+        return 0;
+    }
     for(int i = 0 ; i < n; i++){
         for(int j = 0; j < n; j++){
             cin >> arr[i][j];
