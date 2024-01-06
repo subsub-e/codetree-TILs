@@ -4,7 +4,7 @@ using namespace std;
 int n, m;
 int arr[100][100];
 bool visited[100][100];
-int cnt = 0;
+int cnt = 1;
 
 bool cango(int x, int y){
     return 0 <= x && x < n && 0 <= y && y < n && !visited[x][y] && !arr[x][y];
