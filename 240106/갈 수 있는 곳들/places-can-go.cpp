@@ -4,7 +4,7 @@ using namespace std;
 int n, m;
 int arr[100][100];
 bool visited[100][100];
-int cnt = 1;
+int cnt = 0;
 
 bool cango(int x, int y){
     return 0 <= x && x < n && 0 <= y && y < n && !visited[x][y] && !arr[x][y];
@@ -28,6 +28,10 @@ void bps(int x, int y){
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> m;
+    if(n == 1){
+        cout << 1;
+        return 0;
+    }
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             cin >> arr[i][j];
