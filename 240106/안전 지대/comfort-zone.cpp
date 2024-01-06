@@ -41,7 +41,7 @@ int main() {
     cin >> n >> m;
     int max_k = 0;
     int max = 0;
-    int ans = 0;
+    int ans = 1;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
             cin >> arr[i][j];
