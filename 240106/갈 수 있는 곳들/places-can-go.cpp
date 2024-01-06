@@ -42,10 +42,10 @@ int main() {
         cin >> x >> y;
         x--;
         y--;
-        if(!visited[x][y]){
-            bps(x, y);
-        }
-        //bps(x, y);
+        // if(!visited[x][y]){
+        //     bps(x, y);
+        // }
+        bps(x, y);
     }
     cout << cnt;
     return 0;
