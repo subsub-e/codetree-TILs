@@ -40,7 +40,10 @@ int main() {
     for(int i = 0; i < m; i++){
         int x, y;
         cin >> x >> y;
-        bps(x, y);
+        if(!visited[x][y]){
+            bps(x, y);
+        }
+        //bps(x, y);
     }
     cout << cnt;
     return 0;
