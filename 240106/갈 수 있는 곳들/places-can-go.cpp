@@ -3,7 +3,7 @@ using namespace std;
 
 int n, m;
 int arr[100][100];
-bool visited[100][100];
+bool visited[100][100] = {};
 int cnt = 0;
 
 bool cango(int x, int y){
@@ -42,10 +42,10 @@ int main() {
         cin >> x >> y;
         x--;
         y--;
-        // if(!visited[x][y]){
-        //     bps(x, y);
-        // }
-        bps(x, y);
+        if(!visited[x][y]){
+            bps(x, y);
+        }
+        //bps(x, y);
     }
     cout << cnt;
     return 0;
