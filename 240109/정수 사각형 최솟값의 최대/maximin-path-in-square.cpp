@@ -9,8 +9,8 @@ int answer[100][100];
 void init(){
     answer[0][0] = arr[0][0];
     for(int i = 1; i < a; i++){
-        answer[i][0] = min(arr[i][0], arr[i-1][0]);
-        answer[0][i] = min(arr[0][i], arr[0][i-1]);
+        answer[i][0] = min(arr[i][0], answer[i-1][0]);
+        answer[0][i] = min(arr[0][i], answer[0][i-1]);
     }
 }
 
