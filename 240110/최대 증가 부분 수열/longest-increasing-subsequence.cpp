@@ -7,21 +7,25 @@ int main() {
     int a; cin >> a;
     int arr[1001];
     int answer[1001] = {};
-    for(int i = 0; i <= a; i++){
+    for(int i = 0; i < a; i++){
         cin >> arr[i];
     }
     answer[0] = 1;
-    for(int i = 1; i <= a; i++){
-        int maxans = 0;
+    for(int i = 1; i < a; i++){
+        int maxans = 1;
         for(int j = 0; j < i; j++){
-            if(arr[i] >= arr[j]){
+            if(arr[j] < arr[i]){
                 maxans = max(maxans, answer[j] + 1);
             }
         }
         answer[i] = maxans;
     }
+    // for(int i = 0; i < a; i++){
+    //     cout << answer[i] << ' ';
+    // }
+    // cout << '\n';
     int ans = 0;
-    for(int i = 0; i <= a; i++){
+    for(int i = 0; i < a; i++){
         ans = max(ans, answer[i]);
     }
     cout << ans;
