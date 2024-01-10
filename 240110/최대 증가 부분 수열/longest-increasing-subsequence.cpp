@@ -20,6 +20,10 @@ int main() {
         }
         answer[i] = maxans;
     }
-    cout << answer[a-1];
+    int ans = 0;
+    for(int i = 0; i < a; i++){
+        ans = max(ans, answer[i]);
+    }
+    cout << ans;
     return 0;
 }
