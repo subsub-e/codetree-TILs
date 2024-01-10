@@ -62,12 +62,12 @@ int main() {
     // 마지막 원소의 위치가 i일 때의 부분 수열들 중
     // 가장 길이가 긴 증가-감소 부분 수열을 고릅니다.
     // j = 0, j = 1 둘 다 답이 될 수 있으므로 모두 고려합니다.
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < 2; j++){
-            cout << dp[i][j] << ' ';
-        }
-        cout << '\n';
-    }
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < 2; j++){
+    //         cout << dp[i][j] << ' ';
+    //     }
+    //     cout << '\n';
+    // }
     int ans = 0;
     for(int i = 0; i < n; i++)
         for(int j = 0; j < 2; j++)
