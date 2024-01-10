@@ -14,7 +14,7 @@ int main() {
     for(int i = 1; i <= a; i++){
         int maxans = 0;
         for(int j = 0; j < i; j++){
-            if(arr[i] > arr[j]){
+            if(arr[i] >= arr[j]){
                 maxans = max(maxans, answer[j] + 1);
             }
         }
