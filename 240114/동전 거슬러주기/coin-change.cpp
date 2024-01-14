@@ -45,7 +45,7 @@ int main() {
             wa.clear();
         }
     }
-    if(arr[m] == INT_MIN){
+    if(arr[m] == INT_MIN || 0){
         cout << -1;
         return 0;
     }
