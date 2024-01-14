@@ -7,7 +7,7 @@ using namespace std;
 int n, m;
 vector<int> weight;
 vector<int> price;
-int arr[101];
+int arr[10001];
 
 void init(){
     for(int i = 0; i <= m; i++){
