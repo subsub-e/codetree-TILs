@@ -14,10 +14,11 @@ int main() {
     int cnt = 0;
     for(int i = 0; i < a; i++){
         int d = b - arr[i];
+        m[arr[i]]--;
         if(m.find(d) != m.end()){
             cnt += m[d];
         }
-        m[arr[i]]--;
+        
     }
     cout << cnt;
     return 0;
