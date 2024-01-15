@@ -19,7 +19,7 @@ int main() {
             }
         }
     }
-    int ans = 0;
+    long long ans = 0;
     for(auto i : m){
         ans += i.second;
     }
