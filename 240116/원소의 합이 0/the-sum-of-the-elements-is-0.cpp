@@ -24,7 +24,7 @@ int main() {
     for(unordered_map<int, int>::iterator it=first.begin(); it != first.end(); it++){
         int diff = -(it->first); // 0-(A+B)
         if(second.find(diff) != second.end()) // 만약 그 차이가 C+D에 있다면
-            cnt++; // (해당 A+B 값의 freq) * (C+D 값의 freq) 를 ans에 더하기
+            cnt += second[diff] * (it -> second); // (해당 A+B 값의 freq) * (C+D 값의 freq) 를 ans에 더하기
     }
     // 출력
     cout << cnt;
