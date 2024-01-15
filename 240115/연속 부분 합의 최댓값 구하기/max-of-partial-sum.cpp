@@ -24,7 +24,7 @@ int main() {
     for(int i = 1; i < a; i++){
         sum[i] = max(sum[i-1] + arr[i], arr[i]);
     }
-    int ans = 0;
+    int ans = INT_MIN;
     for(int i = 0; i < a; i++){
         //cout << sum[i] << ' ';
         ans = max(ans, sum[i]);
