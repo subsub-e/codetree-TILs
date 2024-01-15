@@ -14,7 +14,7 @@ int main() {
     }
     for(int i = 0; i < b; i++){
         string str1; cin >> str1;
-        if(str1[0] > '0' && str1[0] < '9'){
+        if(str1[0] > '0' && str1[0] <= '9'){
             for(int j = 0; j < a; j++){
                 if(m[arr[j]] == stoi(str1)){
                     cout << arr[j] << '\n';
