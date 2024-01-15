@@ -17,7 +17,7 @@ int main() {
         if(m.find(d) != m.end()){
             cnt += m[d];
         }
-        m.erase(arr[i]);
+        m[arr[i]]--;
     }
     cout << cnt;
     return 0;
