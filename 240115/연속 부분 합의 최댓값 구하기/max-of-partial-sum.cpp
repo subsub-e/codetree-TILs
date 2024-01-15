@@ -25,10 +25,10 @@ int main() {
         sum[i] = max(sum[i-1] + arr[i], arr[i]);
     }
     int ans = 0;
-    // for(int i = 0; i < a; i++){
-    //     cout << sum[i] << ' ';
-    //     ans = max(ans, sum[i]);
-    // }
+    for(int i = 0; i < a; i++){
+        //cout << sum[i] << ' ';
+        ans = max(ans, sum[i]);
+    }
     cout << ans;
     return 0;
 }
