@@ -11,7 +11,7 @@ void init(){
     for(int i = 0; i < a; i++){
         sum[i] = INT_MIN;
     }
-    sum[0] = 2 * arr[0];
+    sum[0] = arr[0];
 }
 
 int main() {
