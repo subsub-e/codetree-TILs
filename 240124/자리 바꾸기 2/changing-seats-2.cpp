@@ -19,7 +19,7 @@ int main() {
         arr[i] = i;
         s[i].insert(i);
     }
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i <= 3; i++){
         for(int j = 0; j < k; j++){
             int temp = arr[v[j].first];
             arr[v[j].first] = arr[v[j].second];
@@ -27,6 +27,10 @@ int main() {
             s[arr[v[j].first]].insert(v[j].second);
             s[arr[v[j].second]].insert(v[j].first);
         }
+        // for(int j = 0; j < n; j++){
+            
+        // }
+        //cout << '\n';
     }
     for(int i = 0; i < n; i++){
         cout << s[i].size() << '\n';
