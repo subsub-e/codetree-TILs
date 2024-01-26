@@ -13,8 +13,11 @@ int main() {
             c--;
 
         }
-        if(c > b || c < 1){
+        if(c > b){
             continue;
+        }
+        if(c < 1){
+            break;
         }
         s.insert(c);
         //index++;
