@@ -9,12 +9,11 @@ int main() {
     int cnt = 0;
     for(int i = 0; i < a; i++){
         int c; cin >> c;
-        while(s.find(c) != s.end()){
-            c--;
-
-        }
         if(c > b){
             continue;
+        }
+        while(s.find(c) != s.end()){
+            c--;
         }
         if(c < 1){
             break;
