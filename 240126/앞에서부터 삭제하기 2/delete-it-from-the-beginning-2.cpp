@@ -10,22 +10,17 @@ int main() {
     for(int i = 0; i < a; i++){
         cin >> arr[i];
     }
+    int sum = arr[a-1];
+    priority_queue<int> pq;
+    pq.push(-arr[a-1]);
     double maxans = 0;
-    for(int i = 0; i < a-2; i++){
+    for(int i = a-2; i > 0; i--){
         //arr[i] = 0;
-        priority_queue<int> pq;
-        for(int j = i + 1; j < a; j++){
-            pq.push(-arr[j]);
-        }
-        pq.pop();
-        double sum = 0;
-        int si =pq.size();
-        for(int j = 0; j < si; j++){
-            sum += -(pq.top());
-            pq.pop();
-        }
-        //cout << sum << '\n';
-        maxans = max(maxans, sum / (a-i-2));
+        sum += arr[i];
+        pq.push(-arr[i]);
+        double avg = (double) (sum - (-pq.top())) / (a - i - 1);
+        //cout << avg << '\n';
+        maxans = max(maxans, avg);
     }
     cout << fixed;
     cout.precision(2);
