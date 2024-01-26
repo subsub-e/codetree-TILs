@@ -10,18 +10,18 @@ int main() {
     priority_queue<tuple<int, int, int> > pq;
     for(int i = 0; i < n; i++){
         int a, b; cin >> a >> b;
-        pq.push(make_tuple(-(a + b), a, b));
+        pq.push(make_tuple(-(a + b), -a, -b));
     }
     for(int i = 0; i < m; i++){
         int x, y;
         tie(ignore, x, y) = pq.top();
-        x += 2;
-        y += 2;
+        x -= 2;
+        y -= 2;
         pq.pop();
-        pq.push(make_tuple(-(x + y), x, y));
+        pq.push(make_tuple((x + y), x, y));
     }
     int nx, ny;
     tie(ignore, nx, ny) = pq.top();
-    cout << nx << ' ' << ny;
+    cout << -nx << ' ' << -ny;
     return 0;
 }
