@@ -18,6 +18,9 @@ int main() {
         pq.pop();
         int second = pq.top();
         pq.pop();
+        if(first - second == 0){
+            continue;
+        }
         pq.push(first - second);
     }
     if(pq.empty()){
