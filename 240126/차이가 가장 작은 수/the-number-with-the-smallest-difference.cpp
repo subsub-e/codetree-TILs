@@ -13,11 +13,13 @@ int main() {
         s.insert(a);
     }
     int minans = INT_MAX;
-    for(set<int>::iterator it = s.begin(); it != s.end()--; it++){
-        set<int>::iterator next = s.lower_bound(*it - m);
+    for(set<int>::iterator it = s.begin(); it != s.end(); it++){
+        set<int>::iterator next = s.upper_bound(*it - m);
+        //cout << *next << '\n';
         if(next != s.begin()){
             next--;
             minans = min(minans, *it - *next);
+            //cout << minans << '\n';
         }
     }
     if(minans == INT_MAX){
