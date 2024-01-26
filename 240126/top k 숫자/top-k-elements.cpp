@@ -9,10 +9,10 @@ int main() {
     int cnt = 0;
     for(int i = 0; i < a; i++){
         int c; cin >> c;
-        if(s.find(c) != s.end()){
-            //cout << "pp" << '\n';
-            continue;
-        }
+        // if(s.find(c) != s.end()){
+        //     //cout << "pp" << '\n';
+        //     continue;
+        // }
         s.insert(c);
     }
     set<int>::iterator it;
