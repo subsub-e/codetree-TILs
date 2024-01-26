@@ -14,15 +14,7 @@ int main() {
                 cout << 0 << '\n';
             }
             else{
-                if(pq1.top() > pq2.top()){
-                    cout << -pq1.top() << '\n';
-                    pq1.pop();
-                }
-                else if(pq1.top() < pq2.top()){
-                    cout << pq2.top() << '\n';
-                    pq2.pop();
-                }
-                else if(pq1.empty()){
+                if(pq1.empty()){
                     cout << pq2.top() << '\n';
                     pq2.pop();
                 }
@@ -30,7 +22,15 @@ int main() {
                     cout << -pq1.top() << '\n';
                     pq1.pop();
                 }
-                else{
+                else if(pq1.top() > pq2.top()){
+                    cout << -pq1.top() << '\n';
+                    pq1.pop();
+                }
+                else if(pq1.top() < pq2.top()){
+                    cout << pq2.top() << '\n';
+                    pq2.pop();
+                }
+                else if(pq1.top() == pq2.top()){
                     cout << pq2.top() << '\n';
                     pq2.pop();
                 }
