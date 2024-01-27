@@ -21,7 +21,7 @@ int main() {
     //     cout << sum[i] << ' ';
     // }
     int maxans = 0;
-    for(int i = 2; i <= a; i++){
+    for(int i = b; i <= a; i++){
         maxans = max(maxans, sum[i] - sum[i-b]);
     }
     cout << maxans;
