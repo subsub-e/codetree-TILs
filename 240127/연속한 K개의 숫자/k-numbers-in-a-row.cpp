@@ -41,6 +41,6 @@ int main() {
     for(int i = 1; i <= n - k + 1; i++)
         ans = min(ans, GetSum(i, i + k - 1));
 
-    //cout << ans;
+    cout << ans;
     return 0;
 }
