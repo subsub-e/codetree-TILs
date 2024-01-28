@@ -41,7 +41,7 @@ int main() {
     // }
     // cout << '\n';
 
-    int cnt = 0;
+    long long cnt = 0;
     for(int i = 1; i < a-1; i++){
         if(arr[i] == 'O'){
             cnt += (left[i] * right[i]);
