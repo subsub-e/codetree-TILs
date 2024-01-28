@@ -25,7 +25,7 @@ int main() {
     for(int i = 0; i < 3; i++){
         int cnt = 0;
         for(int j = a-1; j >= 0; j--){
-            if(al[i] == arr[j - 1]){
+            if(al[i] == arr[j]){
                 cnt += 1;
             }
             right[j] = max(right[j], cnt);
@@ -43,8 +43,8 @@ int main() {
     // cout << '\n';
 
     int maxans = 0;
-    for(int i = 0; i <= a; i++){
-        int ans = left[i - 1] + right[i-1];
+    for(int i = 0; i < a; i++){
+        int ans = left[i + 1] + right[i];
         maxans = max(maxans, ans);
     }
     cout << maxans;
