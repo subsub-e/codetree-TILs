@@ -44,7 +44,7 @@ int main() {
 
     int maxans = 0;
     for(int i = 0; i <= a; i++){
-        int ans = left[i - 1] + right[i] + 1;
+        int ans = left[i - 1] + right[i-1];
         maxans = max(maxans, ans);
     }
     cout << maxans;
