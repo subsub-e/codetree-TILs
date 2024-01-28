@@ -26,8 +26,9 @@ int main() {
     }
 
     for(int i = 1; i < a - 1; i++){
-        int ans = left[i - 1] + right[i + 1] + abs(arr[i + 1][0] - arr[i - 1][0]) + abs(arr[i + 1][1] - arr[i - 1][0]);
-        //cout << left[i - 1] << ' ' << right[i + 1] << ' ' << abs(arr[i + 1][0] - arr[i - 1][0]) << ' ' << abs(arr[i + 1][1] - arr[i - 1][1]) << '\n';
+        int ans = left[i - 1] + right[i + 1] + abs(arr[i + 1][0] - arr[i - 1][0]) + abs(arr[i + 1][1] - arr[i - 1][1]);
+        //cout << left[i - 1] << ' ' << right[i + 1] << ' ' << abs(arr[i + 1][0] - arr[i - 1][0]) << ' ' << abs(arr[i + 1][1] - arr[i - 1][1]) << ' ' << ans <<  '\n';
+        //cout << ans << '\n';
         minans = min(minans, ans);
     }
     cout << minans;
