@@ -44,7 +44,7 @@ int main() {
     long long cnt = 0;
     for(int i = 1; i < a-1; i++){
         if(arr[i] == 'O'){
-            cnt += (left[i] * right[i]);
+            cnt += (left[i - 1] * right[i + 1]);
         }
     }
     cout << cnt;
