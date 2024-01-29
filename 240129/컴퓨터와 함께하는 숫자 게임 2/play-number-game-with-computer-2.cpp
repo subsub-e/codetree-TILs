@@ -8,7 +8,7 @@ long long a;
 long long b, c;
 vector<long long> v;
 
-long long func(int x){
+long long func(long long x){
     long long left = 1;
     long long right = a;
     long long cnt = 0;
