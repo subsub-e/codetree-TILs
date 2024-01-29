@@ -8,25 +8,26 @@ long long a;
 long long b, c;
 vector<long long> v;
 
-int func(int x){
+long long func(int x){
     long long left = 1;
     long long right = a;
     long long cnt = 0;
     while(left <= right){
+        cnt++;
         long long mid = (left + right) / 2;
         if(mid == x){
-            break;
+            return cnt;
         }
         else if(mid > x){
             right = mid - 1;
-            cnt++;
+            //cnt++;
         }
         else{
             left = mid + 1;
-            cnt++;
+            //cnt++;
         }
     }
-    return cnt + 1;
+    return -1;
 }
 
 int main() {
