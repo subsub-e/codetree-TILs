@@ -2,52 +2,31 @@
 #include <tuple>
 #include <algorithm>
 #include <vector>
-#include <queue>
 using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
     int a; cin >> a;
-    vector<pair<int, int>> aaa;
-    priority_queue<int> computer;
-    int assigned_nums[a];
+    vector<pair<int, int> > v;
     for(int i = 0; i < a; i++){
-        int x1, x2;
-        cin >> x1 >> x2;
-        aaa.push_back(make_pair(x1, x2));
-    }
-    
-    for(int i = 1; i <= a; i++){
-        computer.push(-i);
-    }
-    
-    vector<tuple<int, int, int>> points;
-    for(int i = 0; i < a; i++){
-        int x1, x2;
-        tie(x1, x2) = aaa[i];
-        points.push_back(make_tuple(x1, +1, i));
-        points.push_back(make_tuple(x2, -1, i));
+        int x1, x2; cin >> x1 >> x2;
+        v.push_back(make_pair(x1, -1));
+        v.push_back(make_pair(x2, +1));
     }
 
-    sort(points.begin(), points.end());
-    for(int i= 0; i < 2 * a; i++){
-        int x, v, index;
-        tie(x, v, index) = points[i];
+    sort(v.begin(), v.end());
 
-        if(v == +1){
-            int computer_num = computer.top();
-            computer.pop();
-
-            assigned_nums[index] = -computer_num;
-        }
-        else{
-            int computer_num = assigned_nums[index];
-            computer.push(-computer_num);
-        }
-    }
     int maxans = 0;
-    for(int i = 0; i < a; i++){
-        maxans = max(maxans, assigned_nums[i]);
+    int cnt = 0;
+    //int sum = 0;
+    // for(int i = 0; i < a * 2; i++){
+    //     cout << v[i].first << ' ' << v[i].second << '\n';
+    // }
+    for(int i = 0; i < a * 2; i++){
+        int x, b;
+        tie(x, b) = v[i];
+        cnt += -b;
+        maxans = max(maxans, cnt);
     }
     cout << maxans;
     return 0;
