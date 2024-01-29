@@ -5,7 +5,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     long long a; cin >> a;
     long long left = 1;
-    long long right = a;
+    long long right = 2000000000;
     long long min_num = 0;
     while(left <= right){
         long long mid = (left + right) / 2;
