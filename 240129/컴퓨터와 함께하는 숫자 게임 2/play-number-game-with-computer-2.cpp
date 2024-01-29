@@ -6,7 +6,7 @@ using namespace std;
 
 int a;
 int b, c;
-vector<int> v;
+vector<long long> v;
 
 int func(int x){
     int left = 0;
