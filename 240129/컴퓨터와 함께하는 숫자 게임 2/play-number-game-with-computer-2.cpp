@@ -8,10 +8,10 @@ long long a;
 long long b, c;
 vector<long long> v;
 
-long long func(long long x){
+int func(long long x){
     long long left = 1;
     long long right = a;
-    long long cnt = 0;
+    int cnt = 0;
     while(left <= right){
         cnt++;
         long long mid = (left + right) / 2;
@@ -36,10 +36,10 @@ int main() {
     // for(int i = 1; i <= a; i++){
     //     v.push_back(i);
     // }
-    long long minans = INT_MAX;
-    long long maxans = 0;
-    for(int i = b; i <= c; i++){
-        long long ans = func(i);
+    int minans = INT_MAX;
+    int maxans = 0;
+    for(long long i = b; i <= c; i++){
+        int ans = func(i);
         //cout << ans << ' ';
         minans = min(minans, ans);
         maxans = max(maxans, ans);
