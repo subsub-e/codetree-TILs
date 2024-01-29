@@ -4,16 +4,16 @@
 #include <climits>
 using namespace std;
 
-int a;
-int b, c;
+long long a;
+long long b, c;
 vector<long long> v;
 
 int func(int x){
-    int left = 1;
-    int right = a;
-    int cnt = 0;
+    long long left = 1;
+    long long right = a;
+    long long cnt = 0;
     while(left <= right){
-        int mid = (left + right) / 2;
+        long long mid = (left + right) / 2;
         if(mid == x){
             break;
         }
@@ -35,10 +35,10 @@ int main() {
     // for(int i = 1; i <= a; i++){
     //     v.push_back(i);
     // }
-    int minans = INT_MAX;
-    int maxans = 0;
+    long long minans = INT_MAX;
+    long long maxans = 0;
     for(int i = b; i <= c; i++){
-        int ans = func(i);
+        long long ans = func(i);
         //cout << ans << ' ';
         minans = min(minans, ans);
         maxans = max(maxans, ans);
