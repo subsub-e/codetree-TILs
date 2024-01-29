@@ -48,6 +48,7 @@ int main() {
         int a; cin >> a;
         v.push_back(a);
     }
+    sort(v.begin(), v.end());
     v.push_back(1000000001);
     for(int i = 0; i < m; i++){
         int x1, x2; cin >> x1 >> x2;
