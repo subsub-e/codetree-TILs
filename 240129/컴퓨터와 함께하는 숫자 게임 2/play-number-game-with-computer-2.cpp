@@ -9,15 +9,15 @@ int b, c;
 vector<long long> v;
 
 int func(int x){
-    int left = 0;
-    int right = v.size() - 1;
+    int left = 1;
+    int right = a;
     int cnt = 0;
     while(left <= right){
         int mid = (left + right) / 2;
-        if(v[mid] == x){
+        if(mid == x){
             break;
         }
-        else if(v[mid] > x){
+        else if(mid > x){
             right = mid - 1;
             cnt++;
         }
@@ -31,11 +31,10 @@ int func(int x){
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    cin >> a;
-    cin >> b >> c;
-    for(int i = 1; i <= a; i++){
-        v.push_back(i);
-    }
+    cin >> a >> b >> c;
+    // for(int i = 1; i <= a; i++){
+    //     v.push_back(i);
+    // }
     int minans = INT_MAX;
     int maxans = 0;
     for(int i = b; i <= c; i++){
