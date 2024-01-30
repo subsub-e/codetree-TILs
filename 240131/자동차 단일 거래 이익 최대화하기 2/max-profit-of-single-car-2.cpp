@@ -15,6 +15,7 @@ int main() {
     long long sum = 0;
     for(int i = 1; i < a; i++){
         if(v[i] - v[i-1] < 0){
+            maxans = max(maxans, sum);
             sum = 0;
             continue;
         }
