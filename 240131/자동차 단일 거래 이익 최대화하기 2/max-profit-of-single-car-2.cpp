@@ -21,7 +21,7 @@ int main() {
             //maxans = max(maxans, sum);
             minans = LONG_LONG_MAX;
             maxans = 0;
-            sum = 0;
+            //sum = 0;
             continue;
         }
         //sum += (v[i] - v[i - 1]);
