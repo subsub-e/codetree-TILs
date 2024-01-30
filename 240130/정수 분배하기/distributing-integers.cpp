@@ -27,8 +27,9 @@ int main() {
         v.push_back(a);
         right = min(right, a);
     }
-    int mid = right - 1;
+    //int mid = right - 1;
     while(left <= right){
+        int mid = (left + right) / 2;
         if(func(mid) >= k){
             left = mid + 1;
             maxans = max(maxans, mid);
@@ -36,7 +37,7 @@ int main() {
         else{
             right = mid - 1;
         }
-        mid = (left + right) / 2;
+        
     }
     cout << maxans;
     return 0;
