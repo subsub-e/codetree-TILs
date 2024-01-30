@@ -6,11 +6,21 @@ using namespace std;
 
 
 bool cmp(string a, string b){
-    string str1 = a + b;
-    string str2 = b + a;
-    long long num1 = stoi(str1);
-    long long num2 = stoi(str2);
-    if(num1 > num2){
+    long long num1 = stoi(a);
+    long long num2 = stoi(b);
+    int len = min(a.length(), b.length());
+    for(int i = 0; i < len; i++){
+        if(a[i] == b[i]){
+            continue;
+        }
+        else if(a[i] > b[i]){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    if(a.length() < b.length()){
         return true;
     }
     else{
