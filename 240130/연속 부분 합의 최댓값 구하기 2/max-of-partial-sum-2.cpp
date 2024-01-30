@@ -15,13 +15,10 @@ int main() {
     }
     for(int i = 0; i < a; i++){
         sum += v[i];
+        maxans = max(maxans, sum);
         if(sum <= 0){
             sum = 0;
         }
-        else{
-            maxans = max(maxans, sum);
-        }
-
     }
     cout << maxans;
     return 0;
