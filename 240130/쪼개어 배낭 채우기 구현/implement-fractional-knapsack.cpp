@@ -15,11 +15,15 @@ int main() {
     // for(int i = 0; i < n; i++){
     //     cout << v[i].first << ' ' << v[i].second << '\n';
     // }
-    long double sum = 0;
+    double sum = 0;
     int index = n - 1;
     cout << fixed;
     cout.precision(3);
     while(1){
+        if(index < 0){
+            cout << sum;
+            return 0;
+        }
         for(int i = 0; i < v[index].second; i++){
             sum += v[index].first;
             m--;
