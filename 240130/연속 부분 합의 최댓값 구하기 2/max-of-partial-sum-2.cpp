@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 using namespace std;
 
 int main() {
@@ -8,7 +9,7 @@ int main() {
     int a; cin >> a;
     vector<int> v;
     int sum = 0;
-    int maxans = 0;
+    int maxans = INT_MIN;
     for(int i = 0; i < a; i++){
         int x; cin >> x;
         v.push_back(x);
