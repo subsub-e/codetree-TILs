@@ -20,7 +20,7 @@ int main() {
         if(v[i] - v[i-1] < 0){
             //maxans = max(maxans, sum);
             sum = max(sum, maxans - minans);
-            minans = LONG_LONG_MAX;
+            minans = min(minans, v[i]);
             maxans = 0;
             //sum = 0;
             continue;
