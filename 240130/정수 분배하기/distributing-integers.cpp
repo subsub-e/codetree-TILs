@@ -19,13 +19,13 @@ int func(int x){
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> k;
-    int right = INT_MAX;
+    int right = 0;
     int left = 1;
     int maxans = 0;
     for(int i = 0; i < n; i++){
         int a; cin >> a;
         v.push_back(a);
-        right = min(right, a);
+        right = max(right, a);
     }
     //int mid = right - 1;
     while(left <= right){
