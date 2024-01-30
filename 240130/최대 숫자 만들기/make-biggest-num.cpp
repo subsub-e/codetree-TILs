@@ -8,13 +8,17 @@ using namespace std;
 bool cmp(string a, string b){
     string str1 = a + b;
     string str2 = b + a;
-    long long num1 = stoi(str1);
-    long long num2 = stoi(str2);
-    if(num1 > num2){
-        return true;
-    }
-    else{
-        return false;
+    int len = str1.length();
+    for(int i = 0; i < len; i++){
+        if((int) str1[i] == (int) str2[i]){
+            continue;
+        }
+        else if((int) str1[i] > (int) str2[i]){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
