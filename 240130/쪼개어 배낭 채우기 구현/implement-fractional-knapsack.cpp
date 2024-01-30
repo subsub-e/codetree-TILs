@@ -15,7 +15,7 @@ int main() {
     // for(int i = 0; i < n; i++){
     //     cout << v[i].first << ' ' << v[i].second << '\n';
     // }
-    double sum = 0;
+    long double sum = 0;
     int index = n - 1;
     cout << fixed;
     cout.precision(3);
