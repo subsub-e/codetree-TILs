@@ -19,6 +19,7 @@ int main() {
     for(int i = 1; i < a; i++){
         if(v[i] - v[i-1] < 0){
             //maxans = max(maxans, sum);
+            sum = max(sum, maxans - minans);
             minans = LONG_LONG_MAX;
             maxans = 0;
             //sum = 0;
