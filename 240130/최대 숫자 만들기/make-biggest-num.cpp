@@ -8,8 +8,8 @@ using namespace std;
 bool cmp(string a, string b){
     string str1 = a + b;
     string str2 = b + a;
-    int len = str1.length();
-    for(int i = 0; i < len; i++){
+    long long len = str1.length();
+    for(long long i = 0; i < len; i++){
         if((int) str1[i] == (int) str2[i]){
             continue;
         }
