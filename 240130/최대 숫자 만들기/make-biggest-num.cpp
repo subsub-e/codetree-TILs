@@ -8,8 +8,8 @@ using namespace std;
 bool cmp(string a, string b){
     string str1 = a + b;
     string str2 = b + a;
-    int num1 = stoi(str1);
-    int num2 = stoi(str2);
+    long long num1 = stoi(str1);
+    long long num2 = stoi(str2);
     if(num1 > num2){
         return true;
     }
