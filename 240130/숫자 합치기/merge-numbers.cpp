@@ -1,31 +1,29 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <queue>
 using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
     int sum = 0;
-    vector<int> v;
     int a; cin >> a;
+    priority_queue<int> q;
     for(int i = 0; i < a; i++){
         int x; cin >> x;
-        v.push_back(x);
+        q.push(-x);
     }
-    sort(v.begin(), v.end());
-    int index = 0;
-    for(int i = 0; i < a-1; i++){
-        int p = v[index] + v[index + 1];
-        v[index] = 0;
-        v[index + 1] = 0;
-        v.push_back(p);
-        sum += p;
-        sort(v.begin(), v.end());
-        // for(int j = 0; j < v.size(); j++){
-        //     cout << v[j] << ' '; 
+    while(q.size() > 1){
+        int b1 = q.top();
+        q.pop();
+        int b2 = q.top();
+        q.pop();
+        b1 = -b1;
+        b2 = -b2;
+        int p = b1 + b2;
+        q.push(-p);
+        // for(int i = 0; i < q.size(); i++){
+        //     cout << q.top()
         // }
-        // cout << '\n';
-        index += 2;
+        sum += p;
     }
     cout << sum;
     return 0;
