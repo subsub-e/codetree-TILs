@@ -5,24 +5,25 @@ using namespace std;
 
 int main() {
     // 여기에 코드를 작성해주세요.
-    int n; cin >> n;
+    int a; cin >> a;
     vector<pair<int, int> > v;
-    for(int i = 0; i < n; i++){
-        int s, e; cin >> s >> e;
-        v.push_back(make_pair(e, s));
+    int cnt = 0;
+    for(int i = 0; i < a; i++){
+        int x1, x2; cin >> x1 >> x2;
+        v.push_back(make_pair(x2, x1));
     }
     sort(v.begin(), v.end());
-    int cnt = 0;
-    // for(int i = 0; i < n; i++){
-    //     cout << v[i].first << ' ' << v[i].second << '\n';
-    // }
-    int index = 0;
-    for(int i = 1; i < n; i++){
-        if(v[i].second >= v[index].first){
-            index++;
+    int endtime = v[0].first;
+    for(int i = 1; i < a; i++){
+        //cout << v[i].second << ' ' << v[i].first << '\n';
+        int starttime = v[i].second;
+        if(endtime > starttime){
+            cnt++;
+            //cout << v[i].first << ' ' << v[i].second << '\n';
+            continue;
         }
         else{
-            cnt++;
+            endtime = v[i].first;
         }
     }
     cout << cnt;
