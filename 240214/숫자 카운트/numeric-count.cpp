@@ -44,7 +44,25 @@ int main() {
             cin >> arr[i][j];
         }
     }
-    for(int i = 100; i <= 999; i++){
+    for(int i = 111; i <= 999; i++){
+        int flag1 = 0;
+        string str = to_string(i);
+        for(int i = 0; i < 3; i++){
+            if(str[i] == '0'){
+                flag1 = 1;
+            }
+        }
+        for(int i = 1; i < 3; i++){
+            if(str[i] == str[i-1]){
+                flag1 = 1;
+            }
+        }
+        if(str[2] == str[0]){
+            flag1 = 1;
+        }
+        if(flag1 == 1){
+            continue;
+        }
         int flag = 0;
         for(int j = 0; j < a; j++){
             if(!game(i, j)){
