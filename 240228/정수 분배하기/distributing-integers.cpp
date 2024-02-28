@@ -25,7 +25,7 @@ int main() {
         int x; cin >> x;
         v.push_back(x);
     }
-    int left = 1;
+    int left = 0;
     int right = 100001;
     while(left < right){
         int mid = (left + right + 1) / 2;
