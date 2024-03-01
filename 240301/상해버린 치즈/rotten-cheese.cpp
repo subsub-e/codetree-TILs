@@ -7,6 +7,7 @@ int n, m, d, s;
 int record[1001][3];
 int sick[51][2];
 int trash[51];
+bool people[51];
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -43,9 +44,17 @@ int main() {
     }
 
     for(int i = 0; i < v.size(); i++){
-        int cnt = 0;
+        for(int j = 1; j <= n; j++){
+            people[j] = 0;
+        }
         for(int j = 0; j < d; j++){
             if(record[j][1] == v[i]){
+                people[record[j][0]] = 1;
+            }
+        }
+        int cnt = 0;
+        for(int j = 1; j <= n; j++){
+            if(people[j]){
                 cnt++;
             }
         }
