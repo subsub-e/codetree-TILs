@@ -56,6 +56,7 @@ void func(int cur){
             }
         }
         maxans = max(maxans, cnt);
+        return;
     }
 
     
