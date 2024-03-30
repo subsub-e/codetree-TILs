@@ -19,8 +19,9 @@ int main() {
     int en = 0;
     int minans = INT_MAX;
     for(int st = 0; st < n; st++){
-        while(sum + v[en] < m && en < n){
+        while(sum < m && en < n){
             sum += v[en];
+            //cout << st << ' ' << en << ' ' << sum << '\n';
             en++;
         }
 
