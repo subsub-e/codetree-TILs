@@ -8,6 +8,7 @@ using namespace std;
 int n, m, k;
 int arr[101][101];
 bool visited[101][101];
+bool ans[101][101];
 int maxans;
 queue<pair<int, int> > q;
 vector<pair<int, int> > stone;
@@ -15,29 +16,28 @@ vector<int> v;
 int dx[4] = {-1, 0, 1, 0};
 int dy[4] = {0, -1, 0, 1};
 
-int bfs(){
-    int cnt = 0;
+void bfs(){
     while(!q.empty()){
         int x = q.front().first;
         int y = q.front().second;
+        ans[x][y] = 1;
         q.pop();
 
         for(int i = 0; i < 4; i++){
             int nx = x + dx[i];
             int ny = y + dy[i];
             if(0 <= nx && nx < n && 0 <= ny && ny < n && arr[nx][ny] == 0 && !visited[nx][ny]){
-                cnt++;
                 visited[nx][ny] = 1;
                 q.push(make_pair(nx, ny));
             }
         }
     }
-    return cnt;
 }
 
 void func(int x, int y, int cnt){
     if(v.size() == k){
         memset(visited, 0, sizeof(visited));
+        memset(ans, 0, sizeof(ans));
         for(int i = 0; i < k; i++){
             int stone_x = stone[v[i]].first;
             int stone_y = stone[v[i]].second;
@@ -46,7 +46,17 @@ void func(int x, int y, int cnt){
 
         q.push(make_pair(x, y));
         visited[x][y] = 1;
-        maxans = max(maxans, bfs());
+        bfs();
+
+        int cnt = 0;
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(ans[i][j] == 1){
+                    cnt++;
+                }
+            }
+        }
+        maxans = max(maxans, cnt);
 
         for(int i = 0; i < k; i++){
             int stone_x = stone[v[i]].first;
@@ -77,10 +87,14 @@ int main() {
     }
 
     for(int i = 0; i < m; i++){
+        
         int x1, x2;
         cin >> x1 >> x2;
+        x1--;
+        x2--;
         func(x1, x2, 0);
     }
+    
     cout << maxans;
     return 0;
 }
