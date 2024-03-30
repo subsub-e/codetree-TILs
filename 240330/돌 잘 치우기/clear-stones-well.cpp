@@ -12,7 +12,7 @@ bool ans[101][101];
 int maxans;
 queue<pair<int, int> > q;
 vector<pair<int, int> > stone;
-vector<pair<int, int> > start;
+vector<pair<int, int> > start1;
 vector<int> v;
 int dx[4] = {-1, 0, 1, 0};
 int dy[4] = {0, -1, 0, 1};
@@ -35,19 +35,20 @@ void bfs(){
     }
 }
 
-void func(int x, int y, int cnt){
+void func(int cnt){
     if(v.size() == k){
         memset(visited, 0, sizeof(visited));
-        //memset(ans, 0, sizeof(ans));
+        memset(ans, 0, sizeof(ans));
         for(int i = 0; i < k; i++){
             int stone_x = stone[v[i]].first;
             int stone_y = stone[v[i]].second;
             arr[stone_x][stone_y] = 0;
         }
 
-        for(int i = 0; i < start.size(); i++){
-            int start_x = start[i].first;
-            int start_y = start[i].second;
+        for(int i = 0; i < start1.size(); i++){
+            int start_x = start1[i].first;
+            int start_y = start1[i].second;
+            //cout << start_x << ' ' << start_y << '\n';
             q.push(make_pair(start_x, start_y));
             visited[start_x][start_y] = 1;
         }
@@ -75,7 +76,7 @@ void func(int x, int y, int cnt){
 
     for(int i = cnt; i < stone.size(); i++){
         v.push_back(i);
-        func(x, y, i + 1);
+        func(i + 1);
         v.pop_back();
     }
 }
@@ -93,11 +94,14 @@ int main() {
     }
 
     for(int i = 0; i < m; i++){
-        
         int x1, x2;
         cin >> x1 >> x2;
-        start.push_back(make_pair(x1, x2));
+        x1--;
+        x2--;
+        start1.push_back(make_pair(x1, x2));
     }
+
+    func(0);
     
     cout << maxans;
     return 0;
