@@ -16,21 +16,19 @@ int main() {
     }
 
     long long sum = 0;
-    int en = 0;
+    int st = 0;
     int minans = INT_MAX;
-    for(int st = 0; st < n; st++){
-        while(sum < m && en < n){
-            sum += v[en];
-            if(sum >= m){
-                minans = min(minans, en - st + 1);
-            }
-            //cout << st << ' ' << en << ' ' << sum << '\n';
-            en++;
+
+    for(int en = 0; en < n; en++){
+        while(sum >= m && st <= en){
+            
+            minans = min(minans, en - st);
+            sum -= v[st];
+            st++;
         }
 
-        minans = min(minans, en - st + 1);
+        sum += v[en];
 
-        sum -= v[st];
     }
     if(minans == INT_MAX){
         cout << -1;
