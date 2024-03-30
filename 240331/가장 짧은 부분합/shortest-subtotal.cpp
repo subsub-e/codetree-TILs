@@ -21,11 +21,14 @@ int main() {
     for(int st = 0; st < n; st++){
         while(sum < m && en < n){
             sum += v[en];
+            if(sum >= m){
+                minans = min(minans, en - st + 1);
+            }
             //cout << st << ' ' << en << ' ' << sum << '\n';
             en++;
         }
 
-        minans = min(minans, en - st + 1);
+        
 
         sum -= v[st];
     }
