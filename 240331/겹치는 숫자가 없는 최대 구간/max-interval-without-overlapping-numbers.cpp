@@ -15,14 +15,14 @@ int main() {
     }
 
     int maxans = 0;
-    int st = 0;
-    for(int en = 0; en < n; en++){
-        if(visited[v[en]]){
-            visited[v[st]] = 0;
-            st++;
+    int en = 0;
+    for(int st = 0; st < n; st++){
+        while(!visited[v[en]] && en < n){
+            visited[v[en]] = 1;
             maxans = max(maxans, en - st + 1);
+            en++;
         }
-        visited[v[en]] = 1;
+        visited[v[st]] = 0;
     }
     cout << maxans;
     return 0;
