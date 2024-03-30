@@ -32,6 +32,10 @@ int main() {
 
         sum -= v[st];
     }
+    if(minans == INT_MAX){
+        cout << -1;
+        return 0;
+    }
     cout << minans;
     return 0;
 }
