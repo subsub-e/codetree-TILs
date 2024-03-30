@@ -28,7 +28,7 @@ int main() {
             en++;
         }
 
-        
+        minans = min(minans, en - st + 1);
 
         sum -= v[st];
     }
