@@ -20,7 +20,7 @@ int main() {
     int flag = 0;
     int index = 0;
     for(int i = 0; i < m; i++){
-        while(index < n && v[index] != v[i]){
+        while(index < n && v[index] != part[i]){
             index++;
         }
         if(index == n){
