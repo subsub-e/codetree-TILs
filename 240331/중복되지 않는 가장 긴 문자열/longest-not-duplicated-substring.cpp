@@ -18,6 +18,9 @@ int main() {
             maxans = max(maxans, en - st + 1);
             en++;
         }
+        if(en == n){
+            maxans = max(maxans, en - st + 1);
+        }
         
         visited[(int)str[st] - 97] = 1;
         st++;
