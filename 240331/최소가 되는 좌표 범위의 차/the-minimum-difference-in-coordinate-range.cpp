@@ -21,7 +21,7 @@ int main() {
         while(en < n && abs(v[en].first - v[st].first) < m){
             en++;
         }
-        if(en == n){
+        if(en == n || st == n - 1){
             break;
         }
         int temp = (v[en].second - v[st].second);
