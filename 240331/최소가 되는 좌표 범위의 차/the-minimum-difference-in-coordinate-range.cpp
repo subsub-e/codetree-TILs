@@ -31,11 +31,6 @@ int main() {
         }
         else{
             st++;
-            if(st == n - 1){
-                int temp1 = (v[en].second - v[st].second);
-                minans = min(minans, abs(temp1));
-                break;
-            }
         }
     }
     if(minans == INT_MAX){
