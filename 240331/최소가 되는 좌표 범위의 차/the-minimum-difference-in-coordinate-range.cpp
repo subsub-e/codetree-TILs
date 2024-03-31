@@ -26,7 +26,7 @@ int main() {
         }
         int temp = (v[en].second - v[st].second);
         minans = min(minans, abs(temp));
-        if(st + 1 == en){
+        if(st + 1 == en || en != n - 1){
             en++;
         }
         else{
