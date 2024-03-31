@@ -13,14 +13,15 @@ int main() {
     int en = 0;
     int maxans = 0;
     while(st < n){
+        if(en == n){
+            break;
+        }
         while(!visited[(int)str[en] - 97]){
             visited[(int)str[en] - 97] = 1;
             maxans = max(maxans, en - st + 1);
             en++;
         }
-        if(en == n){
-            break;
-        }
+        
         visited[(int)str[st] - 97] = 1;
         st++;
     }
