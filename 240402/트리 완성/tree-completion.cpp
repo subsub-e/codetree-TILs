@@ -3,6 +3,7 @@ using namespace std;
 
 int arr[100001];
 int n, m;
+int cnt;
 
 int find(int x){
     if(arr[x] == x){
@@ -17,6 +18,9 @@ void Union(int a, int b){
 
     if(pos_x != pos_y){
         arr[pos_x] = pos_y;
+    }
+    else{
+        cnt++;
     }
     
 }
@@ -33,11 +37,10 @@ int main() {
         Union(x1, x2);
     }
 
-    int cnt = 0;
     for(int i = 2; i <= n; i++){
         if(find(i - 1) != find(i)){
             cnt++;
-            Union(i, i - 1);
+            Union(i - 1, i);
         }
     }
     cout << cnt;
