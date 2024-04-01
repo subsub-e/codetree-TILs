@@ -32,9 +32,9 @@ int main() {
 
     int cnt = 0;
     for(int i = 2; i <= n; i++){
-        if(find(i) != find(1)){
+        if(find(i - 1) != find(i)){
             cnt++;
-            Union(1, i);
+            Union(i, i - 1);
         }
     }
     cout << cnt;
