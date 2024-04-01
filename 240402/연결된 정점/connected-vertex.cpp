@@ -16,8 +16,11 @@ int find(int x){
 void Union(int a, int b){
     int pos_a = find(a);
     int pos_b = find(b);
-    arr[pos_a] = pos_b;
-    sz[pos_b] += sz[pos_a];
+    if(pos_a != pos_b){
+        arr[pos_a] = pos_b;
+        sz[pos_b] += sz[pos_a];
+    }
+    
 }
 
 
