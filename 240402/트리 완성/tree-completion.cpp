@@ -15,7 +15,10 @@ void Union(int a, int b){
     int pos_x = find(a);
     int pos_y = find(b);
 
-    arr[pos_x] = pos_y;
+    if(pos_x != pos_y){
+        arr[pos_x] = pos_y;
+    }
+    
 }
 
 int main() {
