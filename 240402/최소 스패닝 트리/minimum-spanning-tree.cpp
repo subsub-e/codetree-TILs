@@ -32,7 +32,7 @@ int main() {
     }
     sort(arr + 1, arr + m + 1);
 
-    for(int i = 1; i <= m; i++){
+    for(int i = 1; i <= n; i++){
         uf[i] = i;
     }
 
