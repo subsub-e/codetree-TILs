@@ -25,7 +25,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> m;
     //memset(uf, -1, sizeof(uf));
-    for(int i = 0; i < m; i++){
+    for(int i = 1; i <= m; i++){
         int x1, x2, x3;
         cin >> x1 >> x2 >> x3;
         arr[i] = make_tuple(x3, x1, x2);
