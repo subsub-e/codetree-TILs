@@ -20,7 +20,7 @@ int main() {
     while(st < n - 1){
         while(en < n && abs(v[en].first - v[st].first) >= m){
             int temp = (v[en].second - v[st].second);
-            cout << v[en].second << ' ' << v[st].second << '\n';
+            //cout << v[en].second << ' ' << v[st].second << '\n';
             minans = min(minans, abs(temp));
             en++;
         }
