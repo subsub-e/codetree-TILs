@@ -10,7 +10,7 @@ int main() {
     cin >> n >> m;
     vector<vector<int> > v(n + 1);
     int indig[n + 1] = {};
-    for(int i = 1; i <= n; i++){
+    for(int i = 1; i <= m; i++){
         int x1, x2;
         cin >> x1 >> x2;
         v[x1].push_back(x2);
