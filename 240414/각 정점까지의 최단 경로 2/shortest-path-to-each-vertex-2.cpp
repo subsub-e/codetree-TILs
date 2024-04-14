@@ -35,6 +35,10 @@ int main() {
 
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= n; j++){
+            if(arr[i][j] == INF{
+                cout << -1 << ' ';
+                continue;
+            }
             cout << arr[i][j] << ' ';
         }
         cout << '\n';
