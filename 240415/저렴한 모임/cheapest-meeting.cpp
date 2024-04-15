@@ -36,6 +36,9 @@ int main() {
         if(i == s1 || i == s2){
             continue;
         }
+        if(arr[s1][i] + arr[s2][i] + arr[i][e] >= INF){
+            continue;
+        }
         minans = min(minans, arr[s1][i] + arr[s2][i] + arr[i][e]);
     }
     if(minans == INT_MAX){
