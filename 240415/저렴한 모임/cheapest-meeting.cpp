@@ -38,6 +38,12 @@ int main() {
         }
         minans = min(minans, arr[s1][i] + arr[s2][i] + arr[i][e]);
     }
-    cout << minans;
+    if(minans == INT_MAX){
+        cout << -1;
+    }
+    else{
+        cout << minans;
+    }
+    
     return 0;
 }
