@@ -14,6 +14,7 @@ int main() {
         for(int i = 1; i <= n; i++){
             cout << n-1 << '\n';
         }
+        return 0;
     }
     for(int i = 1; i <= n; i++){
         fill(arr[i], arr[i] + 1 + n, INF);
