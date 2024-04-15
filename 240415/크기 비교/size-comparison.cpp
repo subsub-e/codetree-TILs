@@ -10,6 +10,11 @@ const int INF= 0x3f3f3f3f;
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> m;
+    if(m == 0){
+        for(int i = 1; i <= n; i++){
+            cout << n-1 << '\n';
+        }
+    }
     for(int i = 1; i <= n; i++){
         fill(arr[i], arr[i] + 1 + n, INF);
         arr[i][i] = 1;
