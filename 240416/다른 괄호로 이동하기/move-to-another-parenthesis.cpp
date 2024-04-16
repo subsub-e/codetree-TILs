@@ -25,8 +25,8 @@ void func(){
             int dy[4] = {0, 0, -1, 1};
 
             for(int k = 0; k < 4; k++){
-                int nx = i + dx[i];
-                int ny = j + dy[i];
+                int nx = i + dx[k];
+                int ny = j + dy[k];
                 if(0 < nx && nx <= n && 0 < ny && ny <= n){
                     int node1 = arr[i][j];
                     int node2 = arr[nx][ny];
@@ -45,7 +45,7 @@ void func(){
 }
 
 void dijkstra(int x){
-    fill(d, d + n*n + 1, INF);
+    fill(d, d + m + 1, INF);
 
     d[x] = 0;
     priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > pq;
