@@ -62,7 +62,7 @@ int main() {
                 continue;
             }
             d1[next.second] = next.first + d1[cur_x];
-            pq.push(make_pair(d[next.second], next.second));
+            pq.push(make_pair(d1[next.second], next.second));
         }
     }
 
