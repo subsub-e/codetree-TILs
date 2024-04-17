@@ -7,7 +7,7 @@ int n, m;
 int arr[1048577];
 bool visited[1048577];
 
-void dfs(int now){
+int dfs(int x){
     int ret = 0;
     while(x){
         if(visited[x]){
