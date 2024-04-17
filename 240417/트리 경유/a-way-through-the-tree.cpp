@@ -31,7 +31,12 @@ int main() {
     cin >> n >> m;
     while(m--){
         int x; cin >> x;
-        dfs(x, x);
+        if(x % 2 == 1){
+            dfs((x - 1) / 2, x);
+        }
+        else{
+            dfs(x / 2, x);
+        }
         //cout << '\n';
     }
     return 0;
