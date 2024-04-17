@@ -31,6 +31,11 @@ int main() {
     cin >> n >> m;
     while(m--){
         int x; cin >> x;
+        if(x == 1){
+            visited[1] = 1;
+            cout << 0 << '\n';
+            continue;
+        }
         if(x % 2 == 1){
             dfs((x - 1) / 2, x);
         }
