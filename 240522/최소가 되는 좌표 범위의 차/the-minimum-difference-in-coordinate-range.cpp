@@ -10,7 +10,7 @@ int main() {
     vector<pair<int, int> > v;
     for(int i = 0; i < n; i++){
         int x1, x2; cin >> x1 >> x2;
-        v.push_back(make_pair(x2, x1));
+        v.push_back(make_pair(x1, x2));
     }
     sort(v.begin(), v.end());
 
@@ -18,15 +18,15 @@ int main() {
     int st = 0;
     int en = 1;
     while(st < n - 1){
-        while(en < n && abs(v[en].first - v[st].first) >= m){
-            int temp = (v[en].second - v[st].second);
+        while(en < n && abs(v[en].second - v[st].second) >= m){
+            int temp = (v[en].first - v[st].first);
             //cout << v[en].second << ' ' << v[st].second << '\n';
             minans = min(minans, abs(temp));
             en++;
         }
         if(en == n){
-            while(st < n && abs(v[en - 1].first - v[st].first) >= m){
-                int temp = (v[en - 1].second - v[st].second);
+            while(st < n && abs(v[en - 1].second - v[st].second) >= m){
+                int temp = (v[en - 1].first - v[st].first);
                 //cout << v[en].second << ' ' << v[st].second << '\n';
                 minans = min(minans, abs(temp));
                 st++;
@@ -41,6 +41,7 @@ int main() {
         else{
             st++;
         }
+        //cout << st << ' ' << en << ' ' << (v[en].second - v[st].second) << '\n';
     }
     if(minans == INT_MAX){
         cout << -1;
